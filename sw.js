@@ -1,5 +1,7 @@
+//Indicate the service worker is registered.
 console.log('Service Worker is registered.');
 
+//Install cache and add cache files into the cache storage
 self.addEventListener('install', function(e){
     e.waitUntil(
         caches.open('vw1').then(function(cache){
@@ -27,7 +29,7 @@ self.addEventListener('install', function(e){
     );
 });
 
-
+//Fetching the events
 self.addEventListener('fetch', function(e){
     e.respondWith(
         // Check if the event request url already exists in the cache
